@@ -6,11 +6,10 @@ const _model = new Schema({
         type:String,
         required: true
     },
-    raca: String,
-    cor: String,
-    porte: String,
+    raca: String,    
     idadeMedia: Number,
-    cuidadosEspeciais: String,
+    porte: String,
+    cor: String,
 });
 
 mongoose.model('animal', _model);

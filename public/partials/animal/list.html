@@ -12,18 +12,20 @@
         <thead>
             <tr>
                 <th>Código</th>
-                <th>Descrição</th>
-                <th class="text-center">Preço</th>
-                <th class="text-center">Estoque</th>
+                <th>Raça</th>
+                <th class="text-center">Idade média</th>
+                <th class="text-center">Porte</th>
+                <th class="text-center">Cor</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="animal in vm.animal">
                 <td>{{animal.codigo}}</td>
-                <td>{{animal.descricao}}</td>
-                <td class="text-right">{{animal.preco | number:2}}</td>
-                <td class="text-right">{{animal.estoque | number:2}}</td>
+                <td>{{animal.raca}}</td>
+                <td class="text-right">{{animal.idadeMedia | number:2}}</td>
+                <td>{{animal.porte}}</td>
+                <td>{{animal.cor}}</td>
                 <td class="text-right">
                     <a ui-sref="animalEditar({id:animal._id})"><span class="fas fa-edit"></span></a>
                     <a href="#" ng-click="vm.excluir(animal._id)"><span class="fas fa-trash-alt"></span></a>

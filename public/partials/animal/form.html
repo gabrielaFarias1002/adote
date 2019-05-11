@@ -8,18 +8,22 @@
             </div>
         </div>
         <div class="form-group">
-            <label>Descrição:</label>
-            <input ng-model="vm.animal.descricao" type="text" class="form-control">
+            <label>Raça:</label>
+            <input ng-model="vm.animal.raca" type="text" class="form-control">
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label>Preço:</label>
-                <input ng-model="vm.animal.preco" type="number" class="form-control">
+                <label>Idade Média:</label>
+                <input ng-model="vm.animal.idadeMedia" type="number" class="form-control">
             </div>
-            <div class="form-group col-md-6">
-                <label>Estoque:</label>
-                <input ng-model="vm.animal.estoque" type="number" class="form-control">
-            </div>
+        </div>
+        <div class="form-group">
+            <label>Porte:</label>
+            <input ng-model="vm.animal.porte" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Cor:</label>
+            <input ng-model="vm.animal.cor" type="text" class="form-control">
         </div>
         <div class="text-right">
             <button ng-click="vm.save()" type="button" class="btn btn-primary">Salvar</button>

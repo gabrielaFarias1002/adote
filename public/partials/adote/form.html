@@ -23,16 +23,12 @@
             <table class="table table-striped">
                 <tr>
                     <th>Animal</th>
-                    <th class="text-center">Preço</th>
-                    <th class="text-center">Quantidade</th>
-                    <th class="text-center">Total</th>
+                    <th class="text-center">Cartão fidelidade</th>
                     <th></th>
                 </tr>
                 <tr ng-repeat="(index, item) in vm.adote.itens">
                     <td>{{item.animal.codigo}} - {{item.animal.descricao}}</td>
-                    <td class="text-right">{{item.preco|number:2}}</td>
-                    <td class="text-right">{{item.quantidade|number:2}}</td>
-                    <td class="text-right">{{item.total|number:2}}</td>
+                    <td class="text-right">{{item.cartaoFidelidade|number:2}}</td>
                     <td class="text-right">
                         <a href="#" ng-click="vm.editarItem(index)"><span class="fas fa-edit"></span></a>
                         <a href="#" ng-click="vm.excluirItem(index)"><span class="fas fa-trash-alt"></span></a>
