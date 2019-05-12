@@ -3,7 +3,7 @@
     <div class="btn-toolbar mb-2 mb-md-0">
         <a ui-sref="adoteNovo" class="btn btn-sm btn-outline-success">
             <span class="fas fa-plus-square"></span>
-            Novo adote
+            Nova adoção
         </a>
     </div>
 </div>
@@ -13,7 +13,7 @@
             <tr>
                 <th>Emissão</th>
                 <th>Cliente</th>
-                <th class="text-center">Total</th>
+                <th class="text-center">Animal</th>
                 <th></th>
             </tr>
         </thead>
@@ -21,7 +21,7 @@
             <tr ng-repeat="adote in vm.adote">
                 <td>{{adote.emissao | date: 'dd/MM/yyyy HH:mm'}}</td>
                 <td>{{adote.cliente.nome}}</td>
-                <td class="text-right">{{adote.total | number:2}}</td>
+                <td class="text-right">{{adote.animal | number:2}}</td>
                 <td class="text-right">
                     <a ui-sref="adoteEditar({id:adote._id})"><span class="fas fa-edit"></span></a>
                     <a href="#" ng-click="vm.excluir(adote._id)"><span class="fas fa-trash-alt"></span></a>

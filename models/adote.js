@@ -7,6 +7,7 @@ const _model = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'clientes'
     },
+    emissao: Date,
     animal: [{
         animal: {
             required: true,

@@ -3,8 +3,8 @@
     <form>
         <div class="form-row">
             <div class="form-group col-md-4">
-                <label>Emissao:</label>
-                <input ng-model="vm.adote.emissao" readonly type="datetime-local" class="form-control text-right">
+                <label>Emissão:</label>
+                <input ng-model="vm.adote.emissao" type="date (dd-mm-yyyy)" class="form-control text-right">
             </div>
         </div>
         <div class="form-group">
@@ -15,7 +15,20 @@
                 ng-options="item as item.nome for item in vm.clientes track by item._id">
             </select>
         </div>
-        <div class="form-row">
+        <div class="form-group">
+                <label>Animal:</label>
+                <select 
+                    class="form-control"
+                    ng-model="vm.adote.animal"
+                    ng-options="item as item.raca for item in vm.animal track by item._id">
+                </select>
+         </div>
+         <div class="form-group">
+                <label>Cartão fidelidade:</label>
+                <input ng-model="vm.animal.cartaoFidelidade" type="text" class="form-control">
+        </div>
+
+        <!-- <div class="form-row">
             <button ng-click="vm.addItem()" type="button" data-toggle="modal" data-target="#modalItem" class="btn btn-info btn-sm my-2">
                 <span class="fas fa-plus-square"></span>
                 Adicionar item
@@ -27,7 +40,7 @@
                     <th></th>
                 </tr>
                 <tr ng-repeat="(index, item) in vm.adote.itens">
-                    <td>{{item.animal.codigo}} - {{item.animal.descricao}}</td>
+                    <td>{{item.animal.codigo}} - {{item.animal.raca}}</td>
                     <td class="text-right">{{item.cartaoFidelidade|number:2}}</td>
                     <td class="text-right">
                         <a href="#" ng-click="vm.editarItem(index)"><span class="fas fa-edit"></span></a>
@@ -35,7 +48,7 @@
                     </td>
                 </tr>
             </table>
-        </div>
+        </div> -->
         <div class="text-right">
             <button ng-click="vm.save()" type="button" class="btn btn-primary">Salvar</button>
             <button ui-sref="adoteList" type="button" class="btn btn-danger">Cancelar</button>
@@ -58,21 +71,13 @@
                         <select 
                             class="form-control"
                             ng-model="vm.itemSelecionado.animal"
-                            ng-options="item as item.descricao for item in vm.animal track by item._id">
+                            ng-options="item as item.raca for item in vm.animal track by item._id">
                         </select>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label>Quantidade:</label>
-                            <input ng-model="vm.itemSelecionado.quantidade" type="number" class="form-control">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label>Preço:</label>
-                            <input ng-model="vm.itemSelecionado.preco" type="number" class="form-control">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label>Total:</label>
-                            <input ng-model="vm.itemSelecionado.total" type="number" class="form-control">
+                        <div class="form-group col-md-12">
+                            <label>Cartão fidelidade:</label>
+                            <input ng-model="vm.itemSelecionado.cartaoFidelidade" type="number" class="form-control">
                         </div>
                     </div>
                 </form>
