@@ -12,7 +12,7 @@ AdoteFormController.$inject = [
 function AdoteFormController (AdoteService, ClienteService, AnimalService, $stateParams, $state){
     var vm = this;
     vm.adote = {};
-    vm.titulo = 'Novo adote';
+    vm.titulo = 'Nova adoção';
 
     vm.clientes = [];
     vm.animal = [];
@@ -27,7 +27,7 @@ function AdoteFormController (AdoteService, ClienteService, AnimalService, $stat
         });
 
     if ($stateParams.id) {
-        vm.titulo = 'Editando adote';
+        vm.titulo = 'Editando adoção';
         AdoteService.findOne($stateParams.id)
             .then(function (data) {
                 vm.adote = data;

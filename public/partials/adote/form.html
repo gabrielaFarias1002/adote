@@ -4,7 +4,7 @@
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label>Emissão:</label>
-                <input ng-model="vm.adote.emissao" type="date (dd-mm-yyyy)" class="form-control text-right">
+                <input ng-model="vm.adote.emissao | date: 'dd/MM/yyyy HH:mm' " type="date (dd-mm-yyyy)" class="form-control text-right">
             </div>
         </div>
         <div class="form-group">
