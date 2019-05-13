@@ -18,8 +18,4 @@ const _model = new Schema({
     }]
 });
 
-_model.virtual('total').get(function() {
-    return this.itens ? this.itens.reduce((total, item) => total + (item.preco * item.quantidade), 0) : 0;
-})
-
 mongoose.model('adote', _model);

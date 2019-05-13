@@ -11,17 +11,17 @@
     <table class="table table-striped table-sm">
         <thead>
             <tr>
-                <th>Emissão</th>
-                <th>Cliente</th>
+                <th class="text-center">Emissão</th>
+                <th class="text-center">Cliente</th>
                 <th class="text-center">Animal</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="adote in vm.adote">
-                <td>{{adote.emissao | date: 'dd/MM/yyyy HH:mm'}}</td>
-                <td>{{adote.cliente.nome}}</td>
-                <td class="text-right">{{adote.animal | number:2}}</td>
+                <td class="text-center">{{adote.emissao | date: 'dd/MM/yyyy HH:mm'}}</td>
+                <td class="text-center">{{adote.cliente.nome}}</td>
+                <td class="text-center">{{adote.animal | number:2}}</td>
                 <td class="text-right">
                     <a ui-sref="adoteEditar({id:adote._id})"><span class="fas fa-edit"></span></a>
                     <a href="#" ng-click="vm.excluir(adote._id)"><span class="fas fa-trash-alt"></span></a>
