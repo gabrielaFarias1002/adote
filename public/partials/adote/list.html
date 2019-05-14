@@ -21,7 +21,7 @@
             <tr ng-repeat="adote in vm.adote">
                 <td class="text-center">{{adote.emissao | date: 'dd/MM/yyyy HH:mm'}}</td>
                 <td class="text-center">{{adote.cliente.nome}}</td>
-                <td class="text-center">{{adote.animal | number:2}}</td>
+                <td class="text-center">{{adote.animal.raca}}</td>
                 <td class="text-right">
                     <a ui-sref="adoteEditar({id:adote._id})"><span class="fas fa-edit"></span></a>
                     <a href="#" ng-click="vm.excluir(adote._id)"><span class="fas fa-trash-alt"></span></a>
