@@ -29,7 +29,7 @@ module.exports = function (app) {
     app.get('/adote/:id', function (req, resp) {
         adoteModel.findById(req.params.id)
             .populate('cliente')
-            .populate('itens.animal')
+            .populate('animal', 'raca')
             .then(
                 function (data) {
                     if (!data) {
