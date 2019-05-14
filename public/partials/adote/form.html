@@ -4,7 +4,7 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label>Emissão:</label>
-                <input ng-model="vm.adote.emissao" type="date (dd-mm-yyyy)" class="form-control text-right">
+                <input ng-model="vm.pedido.emissao" readonly type="datetime-local" class="form-control text-right">
             </div>
             <div class="form-group col-md-6">
                 <label>Cartão fidelidade:</label>
@@ -32,39 +32,4 @@
             <button ui-sref="adoteList" type="button" class="btn btn-danger">Cancelar</button>
         </div>
     </form>
-    <!-- Modal -->
-    <div class="modal fade" id="modalItem" tabindex="-1" role="dialog" aria-labelledby="modalItemLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalItemLabel">Item de adote</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label>Animal:</label>
-                        <select 
-                            class="form-control"
-                            ng-model="vm.itemSelecionado.animal"
-                            ng-options="item as item.raca for item in vm.animal track by item._id">
-                        </select>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <label>Cartão fidelidade:</label>
-                            <input ng-model="vm.itemSelecionado.cartaoFidelidade" type="number" class="form-control">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" data-dismiss="modal" ng-click="vm.saveItem()" class="btn btn-primary">Salvar</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-            </div>
-          </div>
-        </div>
-    </div>
 </div>

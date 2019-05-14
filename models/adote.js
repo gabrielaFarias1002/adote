@@ -7,15 +7,16 @@ const _model = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'clientes'
     },
-    emissao: Date,
-    animal: [{
-        animal: {
-            required: true,
-            type: Schema.Types.ObjectId,
-            ref: 'animal'
-        },
-        cartaoFidelidade: Number
-    }]
+    emissao: {
+        type: Date,
+        default: Date.now
+    },
+    animal: {
+        required: true,
+        type: Schema.Types.ObjectId,
+        ref: 'animal'
+    },
+    cartaoFidelidade: Number
 });
 
 mongoose.model('adote', _model);

@@ -3,8 +3,9 @@ const adoteModel = mongoose.model('adote');
 
 module.exports = function (app) {
     app.get('/adote', function (req, resp) {
-        adoteModel.find({}, ['emissao', 'cliente', 'itens'], {sort: {emissao: 1}})
+        adoteModel.find({}, ['emissao', 'cliente', 'itens.animal'], {sort: {emissao: 1}})
             .populate('cliente', 'documento nome email')
+            .populate('itens.animal', 'nome')
             .then(
                 function (data) {
                     resp.status(200).send(data);
